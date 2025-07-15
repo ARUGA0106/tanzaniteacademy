@@ -52,12 +52,17 @@ export function HeroCarousel() {
       {/* Hero Content */}
       <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
         <div className="mb-8">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
-            <span className="block typewriter-text">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in">
+            <span className="block typewriter-text bg-gradient-to-r from-white via-accent to-white bg-clip-text text-transparent">
               {slogans[currentSlogan]}
             </span>
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-white/90 animate-fade-in">
+          <div className="text-2xl md:text-3xl lg:text-4xl mb-4 font-semibold animate-fade-in">
+            <span className="bg-gradient-to-r from-accent via-white to-accent bg-clip-text text-transparent tracking-wide animate-pulse">
+              Jifunze Leo, Badilisha Kesho Yako
+            </span>
+          </div>
+          <p className="text-lg md:text-xl mb-8 text-white/90 animate-fade-in">
             Tunatoa mafunzo ya hali ya juu katika maendeleo binafsi, usimamizi wa fedha, 
             maendeleo ya kitaaluma, biashara na teknolojia.
           </p>
@@ -66,7 +71,7 @@ export function HeroCarousel() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Button 
             size="lg"
-            className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 text-lg font-semibold animate-fade-in"
+            className="bg-accent hover:bg-accent-light text-accent-foreground px-10 py-4 text-xl font-bold animate-fade-in rounded-full shadow-glow transition-all duration-300 hover:scale-110 transform hover:shadow-2xl"
             onClick={() => window.open('https://forms.gle/KmJLgkDqTfaP5VmB8', '_blank')}
           >
             Jisajili Sasa
@@ -76,7 +81,7 @@ export function HeroCarousel() {
           <Button 
             variant="outline"
             size="lg"
-            className="border-white/20 text-white hover:bg-white/10 px-8 py-3 text-lg font-semibold animate-fade-in"
+            className="border-white/30 text-white hover:bg-white/20 hover:border-white/50 px-10 py-4 text-lg font-semibold animate-fade-in rounded-full backdrop-blur-sm transition-all duration-300 hover:scale-105"
             onClick={() => document.querySelector('#services')?.scrollIntoView({ behavior: 'smooth' })}
           >
             Jifunze Zaidi
@@ -95,9 +100,11 @@ export function HeroCarousel() {
         {`
         .typewriter-text {
           overflow: hidden;
-          border-right: 2px solid white;
+          border-right: 3px solid hsl(45 100% 60%);
           white-space: nowrap;
-          animation: typing 2s steps(40, end), blink-caret 0.75s step-end infinite;
+          animation: typing 2.5s steps(40, end), blink-caret 0.75s step-end infinite;
+          transform: translateY(0);
+          transition: all 0.3s ease-out;
         }
 
         @keyframes typing {
@@ -107,7 +114,21 @@ export function HeroCarousel() {
 
         @keyframes blink-caret {
           from, to { border-color: transparent }
-          50% { border-color: white }
+          50% { border-color: hsl(45 100% 60%) }
+        }
+
+        @media (max-width: 640px) {
+          .typewriter-text {
+            font-size: 2rem;
+            line-height: 1.2;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .typewriter-text {
+            font-size: 3rem;
+            line-height: 1.1;
+          }
         }
         `}
       </style>

@@ -18,27 +18,27 @@ const Index = () => {
   const services = [
     {
       icon: User,
-      title: "Maendeleo Binafsi",
+      title: "Maendeleo Binafsi (Personal Development)",
       description: "Kuboresha ujuzi wa kujitegemea, kujenga uhakika wa kibinafsi, na kukuza nia za maisha kupitia mbinu za kisayansi za maendeleo ya akili na mwili"
     },
     {
       icon: DollarSign,
-      title: "Usimamizi wa Fedha",
+      title: "Usimamizi wa Fedha Binafsi (Personal Finance Management)",
       description: "Kujifunza njia sahihi za kupanga bajeti, kuweka akiba, kuanzisha mitaji, na kutumia teknolojia za kifedha kwa maendeleo ya kiuchumi"
     },
     {
       icon: GraduationCap,
-      title: "Maendeleo ya Kitaaluma",
+      title: "Maendeleo ya Kitaaluma (Career Development)",
       description: "Kupata ujuzi wa hali ya juu katika masomo, utafiti, uandishi wa kitaalamu, na mbinu za kujifunzia kwa ufanisi zaidi"
     },
     {
       icon: Briefcase,
-      title: "Maendeleo ya Biashara",
+      title: "Maendeleo ya Biashara (Business Development)",
       description: "Kujifunza kuanzisha, kusimamia, na kukuza biashara zindele kupitia mipango ya kibiashara, masoko, na udhibiti wa rasilimali"
     },
     {
       icon: Laptop,
-      title: "Maendeleo ya Teknolojia",
+      title: "Maendeleo ya Teknolojia (Technology Development)",
       description: "Kutumia teknolojia ya kisasa katika kazi, biashara, na maisha ya kila siku ili kuongeza tija na kuboresha ubora wa maisha"
     }
   ];
@@ -52,9 +52,16 @@ const Index = () => {
       <section id="services" className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4 animate-fade-in">
-              Huduma Zetu
-            </h2>
+            <div className="mb-6 animate-fade-in">
+              <h2 className="text-5xl md:text-6xl font-bold text-primary mb-2 bg-gradient-to-r from-primary via-primary-light to-primary bg-clip-text text-transparent animate-pulse">
+                Huduma Zetu
+              </h2>
+              <div className="text-2xl md:text-3xl font-semibold text-secondary mt-4 animate-fade-in tracking-wide">
+                <span className="bg-gradient-to-r from-secondary via-accent to-secondary bg-clip-text text-transparent animate-pulse">
+                  Jifunze Leo, Badilisha Kesho Yako
+                </span>
+              </div>
+            </div>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto animate-fade-in">
               Tunatoa mafunzo ya hali ya juu katika maeneo muhimu ya maendeleo
             </p>
