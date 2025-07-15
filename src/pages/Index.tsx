@@ -10,89 +10,65 @@ import {
   Mail,
   ExternalLink
 } from "lucide-react";
+import { Header } from "@/components/Header";
+import { HeroCarousel } from "@/components/HeroCarousel";
+import { ServiceCard } from "@/components/ServiceCard";
 
 const Index = () => {
   const services = [
     {
       icon: User,
       title: "Maendeleo Binafsi",
-      description: "Jifunze mbinu za kuboresha maisha na fikra zako"
+      description: "Kuboresha ujuzi wa kujitegemea, kujenga uhakika wa kibinafsi, na kukuza nia za maisha kupitia mbinu za kisayansi za maendeleo ya akili na mwili"
     },
     {
       icon: DollarSign,
       title: "Usimamizi wa Fedha",
-      description: "Jifunze kudhibiti mapato na matumizi yako"
+      description: "Kujifunza njia sahihi za kupanga bajeti, kuweka akiba, kuanzisha mitaji, na kutumia teknolojia za kifedha kwa maendeleo ya kiuchumi"
     },
     {
       icon: GraduationCap,
       title: "Maendeleo ya Kitaaluma",
-      description: "Jipatie ujuzi wa kukusaidia kazini na kielimu"
+      description: "Kupata ujuzi wa hali ya juu katika masomo, utafiti, uandishi wa kitaalamu, na mbinu za kujifunzia kwa ufanisi zaidi"
     },
     {
       icon: Briefcase,
       title: "Maendeleo ya Biashara",
-      description: "Jua mbinu za kuanzisha na kukuza biashara"
+      description: "Kujifunza kuanzisha, kusimamia, na kukuza biashara zindele kupitia mipango ya kibiashara, masoko, na udhibiti wa rasilimali"
     },
     {
       icon: Laptop,
       title: "Maendeleo ya Teknolojia",
-      description: "Jifunze matumizi ya teknolojia katika maisha na kazi"
+      description: "Kutumia teknolojia ya kisasa katika kazi, biashara, na maisha ya kila siku ili kuongeza tija na kuboresha ubora wa maisha"
     }
   ];
 
   return (
     <div className="min-h-screen">
-      {/* Header Section */}
-      <header className="relative bg-gradient-hero text-primary-foreground">
-        <div className="absolute inset-0 bg-black/10"></div>
-        <div className="relative container mx-auto px-4 py-20 text-center">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
-            Tanzanite Skills Academy
-          </h1>
-          <p className="text-2xl md:text-3xl mb-8 font-light opacity-90">
-            Jifunze Leo, Badilisha Kesho Yako
-          </p>
-          <Button 
-            size="lg" 
-            className="bg-accent text-accent-foreground hover:bg-accent-light text-xl px-8 py-6 rounded-full shadow-glow transition-smooth hover:scale-105"
-            onClick={() => window.open('https://forms.google.com', '_blank')}
-          >
-            Jisajili Sasa
-            <ExternalLink className="ml-2 h-5 w-5" />
-          </Button>
-        </div>
-      </header>
-
+      <Header />
+      <HeroCarousel />
+      
       {/* Services Section */}
-      <section className="py-20 bg-muted/30">
+      <section id="services" className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4 animate-fade-in">
               Huduma Zetu
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto animate-fade-in">
               Tunatoa mafunzo ya hali ya juu katika maeneo muhimu ya maendeleo
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {services.map((service, index) => (
-              <Card 
-                key={index} 
-                className="bg-gradient-card border-0 shadow-medium hover:shadow-strong transition-smooth hover:scale-105 group"
-              >
-                <CardContent className="p-8 text-center">
-                  <div className="mb-6 inline-flex items-center justify-center w-20 h-20 bg-primary rounded-full group-hover:bg-secondary transition-smooth">
-                    <service.icon className="h-10 w-10 text-primary-foreground" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-primary mb-4">
-                    {service.title}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {service.description}
-                  </p>
-                </CardContent>
-              </Card>
+              <ServiceCard 
+                key={index}
+                icon={service.icon}
+                title={service.title}
+                description={service.description}
+                index={index}
+              />
             ))}
           </div>
         </div>
@@ -101,17 +77,17 @@ const Index = () => {
       {/* CTA Section */}
       <section className="py-20 bg-gradient-cta text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in">
             Uko Tayari Kuanza Safari Yako?
           </h2>
-          <p className="text-xl mb-10 opacity-90 max-w-2xl mx-auto">
+          <p className="text-xl mb-10 opacity-90 max-w-2xl mx-auto animate-fade-in">
             Jiunge na maelfu ya wanafunzi waliobadilisha maisha yao kupitia mafunzo yetu ya hali ya juu
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button 
               size="lg" 
-              className="bg-accent text-accent-foreground hover:bg-accent-light text-xl px-10 py-6 rounded-full shadow-glow transition-bounce hover:scale-110"
-              onClick={() => window.open('https://forms.google.com', '_blank')}
+              className="bg-accent text-accent-foreground hover:bg-accent-light text-xl px-10 py-6 rounded-full shadow-glow transition-bounce hover:scale-110 animate-fade-in"
+              onClick={() => window.open('https://forms.gle/KmJLgkDqTfaP5VmB8', '_blank')}
             >
               Anza Mafunzo
               <ExternalLink className="ml-2 h-5 w-5" />
@@ -119,7 +95,8 @@ const Index = () => {
             <Button 
               size="lg" 
               variant="outline" 
-              className="bg-white/10 border-white/30 text-white hover:bg-white/20 text-lg px-8 py-6 rounded-full transition-smooth"
+              className="bg-white/10 border-white/30 text-white hover:bg-white/20 text-lg px-8 py-6 rounded-full transition-smooth animate-fade-in"
+              onClick={() => window.open('https://wa.me/255749722722', '_blank')}
             >
               Jiunge Nasi Leo
             </Button>
@@ -128,19 +105,19 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 bg-background">
+      <section id="contact" className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4 animate-fade-in">
               Mawasiliano
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-xl text-muted-foreground animate-fade-in">
               Tupo hapa kukusaidia kila wakati
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <Card className="bg-gradient-card border-0 shadow-medium hover:shadow-strong transition-smooth">
+            <Card className="bg-gradient-card border-0 shadow-medium hover:shadow-strong transition-smooth animate-fade-in">
               <CardContent className="p-8 text-center">
                 <div className="mb-6 inline-flex items-center justify-center w-16 h-16 bg-primary rounded-full">
                   <Phone className="h-8 w-8 text-primary-foreground" />
@@ -158,7 +135,7 @@ const Index = () => {
               </CardContent>
             </Card>
             
-            <Card className="bg-gradient-card border-0 shadow-medium hover:shadow-strong transition-smooth">
+            <Card className="bg-gradient-card border-0 shadow-medium hover:shadow-strong transition-smooth animate-fade-in">
               <CardContent className="p-8 text-center">
                 <div className="mb-6 inline-flex items-center justify-center w-16 h-16 bg-secondary rounded-full">
                   <Mail className="h-8 w-8 text-secondary-foreground" />
